@@ -1,0 +1,721 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 148,
+      "y": 188
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!r <Zahl> / !roll <Zahl>",
+          "value": "Ich generiere eine zufällige Zahl zwischen 1 und deiner Zahl",
+          "inline": "false"
+        },
+        {
+          "name": "!coin / !c",
+          "value": "Ich werfe eine Münze (Kopf | Zahl)",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 349,
+      "y": 180,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "08EFFF",
+        "Help",
+        "",
+        "",
+        "",
+        "",
+        "Hier erkläre ich nochmal wie du Würfeln kannst.",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "roll",
+      "guid": "5831ba96-c086-4bda-86a9-c28340efc968",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "dfe55220-2005-450f-bb11-94ad48db5ffc"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 167,
+      "y": 409
+    },
+    {
+      "type": "command",
+      "name": "r",
+      "guid": "e66c26ae-0f8f-4cae-865d-a9a3ce8ac48d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "ac8e9d7f-af47-4063-bfde-d9c2a3d0f050"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 162,
+      "y": 693
+    },
+    {
+      "type": "response",
+      "name": "w_get",
+      "guid": "dfe55220-2005-450f-bb11-94ad48db5ffc",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "maximal",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5831ba96-c086-4bda-86a9-c28340efc968"
+        }
+      ],
+      "x": 364,
+      "y": 442,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "maximal",
+        "Number",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_trigger",
+      "guid": "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "1527aef9-585e-4814-984c-69c91a3a415e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dfe55220-2005-450f-bb11-94ad48db5ffc"
+        },
+        {
+          "label": "trigger",
+          "id": "ac8e9d7f-af47-4063-bfde-d9c2a3d0f050"
+        }
+      ],
+      "x": 623,
+      "y": 485,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "w_set",
+      "guid": "bf0f2464-ef79-4ec9-b4c6-2966659876de",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2f602979-91c6-40df-aeed-3c67c7d877f4"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1527aef9-585e-4814-984c-69c91a3a415e"
+        }
+      ],
+      "x": 1141,
+      "y": 505,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "ergebnis",
+        "1",
+        "${tempVars.maximal}",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_send",
+      "guid": "2f602979-91c6-40df-aeed-3c67c7d877f4",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "bf0f2464-ef79-4ec9-b4c6-2966659876de"
+        }
+      ],
+      "x": 1416,
+      "y": 548,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFF7",
+        "",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "🎲 ${tempVars.ergebnis}",
+        "",
+        "",
+        "${tempVars.maximal}",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_get_1",
+      "guid": "ac8e9d7f-af47-4063-bfde-d9c2a3d0f050",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e66c26ae-0f8f-4cae-865d-a9a3ce8ac48d"
+        }
+      ],
+      "x": 369,
+      "y": 665,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "maximal",
+        "Number",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "w_check",
+      "guid": "1527aef9-585e-4814-984c-69c91a3a415e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "bf0f2464-ef79-4ec9-b4c6-2966659876de"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "2f3e6054-c2c4-4998-a7b5-760bcac85bde"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c"
+        }
+      ],
+      "x": 852,
+      "y": 495,
+      "rtype": "Variable",
+      "rsubtype": "Check If Variable Exists",
+      "formdata": [
+        "maximal",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_set_6",
+      "guid": "2f3e6054-c2c4-4998-a7b5-760bcac85bde",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "47abe0eb-1f54-4dcb-82d4-dae1d3f6be50"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1527aef9-585e-4814-984c-69c91a3a415e"
+        }
+      ],
+      "x": 1216,
+      "y": 813,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "ergebnis",
+        "1",
+        "6",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_send_6",
+      "guid": "47abe0eb-1f54-4dcb-82d4-dae1d3f6be50",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2f3e6054-c2c4-4998-a7b5-760bcac85bde"
+        }
+      ],
+      "x": 1485,
+      "y": 823,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFF7",
+        "",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "🎲 ${tempVars.ergebnis}",
+        "",
+        "",
+        "6",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "W_set_coin",
+      "guid": "5ee04cb6-f6e0-473c-8bf9-ed64b3fb6844",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "24792323-8627-47f7-912c-fae57dc0de36"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "600941f1-481a-4d4a-b4dd-d76ff415299e"
+        }
+      ],
+      "x": 1511,
+      "y": 237,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "coinwurf",
+        "1",
+        "2",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_send_1",
+      "guid": "c8e27b21-665e-4de8-bd5e-434c684e1fb2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "24792323-8627-47f7-912c-fae57dc0de36"
+        }
+      ],
+      "x": 2046,
+      "y": 165,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFF7",
+        "",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "📀 **Kopf**",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_check_number1",
+      "guid": "24792323-8627-47f7-912c-fae57dc0de36",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "c8e27b21-665e-4de8-bd5e-434c684e1fb2"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "7c9149c8-a68d-4813-94d0-79cab9b7aee7"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5ee04cb6-f6e0-473c-8bf9-ed64b3fb6844"
+        }
+      ],
+      "x": 1756,
+      "y": 209,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "coinwurf",
+        "temp",
+        "equal to",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "w_send_1_1",
+      "guid": "7c9149c8-a68d-4813-94d0-79cab9b7aee7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "24792323-8627-47f7-912c-fae57dc0de36"
+        }
+      ],
+      "x": 2055,
+      "y": 325,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFF7",
+        "",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "📀 **Zahl**",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "coin",
+      "guid": "a61ada11-4c13-4324-b331-61ba0f501b94",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "600941f1-481a-4d4a-b4dd-d76ff415299e"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 643,
+      "y": 119
+    },
+    {
+      "type": "command",
+      "name": "c",
+      "guid": "33de53a9-c741-4d07-8a01-b2a623c57792",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "600941f1-481a-4d4a-b4dd-d76ff415299e"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 645,
+      "y": 255
+    },
+    {
+      "type": "response",
+      "name": "coin_trigger",
+      "guid": "600941f1-481a-4d4a-b4dd-d76ff415299e",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5ee04cb6-f6e0-473c-8bf9-ed64b3fb6844"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a61ada11-4c13-4324-b331-61ba0f501b94"
+        },
+        {
+          "label": "trigger",
+          "id": "33de53a9-c741-4d07-8a01-b2a623c57792"
+        }
+      ],
+      "x": 965,
+      "y": 124,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    }
+  ]
+}
