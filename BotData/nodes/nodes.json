@@ -23,13 +23,13 @@
       "reactionFields": [],
       "embedfields": [
         {
-          "name": "!r *Zahl*  | !roll *Zahl*",
-          "value": "Das Würfelergebniss liegt zwischen **1** und deiner **Zahl**.  🎲        ...\nDer Standart-Wert ist **6**",
+          "name": "!r *number*  | !roll *number*",
+          "value": "The result of the dice is between **1** and your **number**.  🎲        ...\nThe default value is **6**",
           "inline": "false"
         },
         {
           "name": "!f | !flip",
-          "value": "Der Bot wirft eine Münze 📀",
+          "value": "The bot flips a coin 📀",
           "inline": "false"
         }
       ],
@@ -227,13 +227,13 @@
           "id": "83a585a9-c04f-4915-b456-99937981f0da"
         }
       ],
-      "x": 1651,
-      "y": 567,
+      "x": 1652,
+      "y": 566,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "00FFEE",
+        "00FFFF",
         "${dbsVars.CommandAuthor.displayName}",
         "",
         "",
@@ -546,6 +546,8 @@
       "guid": "1e13d631-9793-458d-863e-e95b7711dcf5",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -558,19 +560,19 @@
           "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
         }
       ],
-      "x": 994,
+      "x": 993,
       "y": 830,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "00FFEE",
+        "00FFFF",
         "${dbsVars.CommandAuthor.displayName}",
         "",
         "",
         "",
         "",
-        "📀 **Kopf**",
+        "📀 **Head**",
         "",
         "",
         "",
@@ -603,6 +605,8 @@
       "guid": "51031223-d222-4991-94c6-02b35a474dcd",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -615,19 +619,19 @@
           "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
         }
       ],
-      "x": 994,
-      "y": 952,
+      "x": 995,
+      "y": 951,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "00FFEE",
+        "00FFFF",
         "${dbsVars.CommandAuthor.displayName}",
         "",
         "",
         "",
         "",
-        "📀 **Zahl**",
+        "📀 **Tails**",
         "",
         "",
         "",
@@ -719,15 +723,15 @@
           "id": "842368af-90b8-4c0f-9a97-a628fd6a9fa1"
         }
       ],
-      "x": 544,
-      "y": 164,
+      "x": 545,
+      "y": 165,
       "rtype": "Variable",
       "rsubtype": "Check Variable Value",
       "formdata": [
         "helpbotname",
         "temp",
         "equal to",
-        "Würfelbot"
+        "Rollbot"
       ],
       "formnames": [
         "varname",
