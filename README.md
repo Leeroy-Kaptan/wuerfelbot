@@ -4,7 +4,8 @@
 Du musst nur noch deinen Bot-Token einfügen unter: <br />
 **/BotData/Settings/Settings.json**
 
-
+<br />
+<br />
 
 
 
