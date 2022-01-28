@@ -1,4 +1,4 @@
-# Würfelbot
+# Rollbot
 **ein Simple-Bot der Würfel rollen und eine Münzen werfen kann.**
 
 Du musst nur noch deinen Bot-Token einfügen unter: <br />

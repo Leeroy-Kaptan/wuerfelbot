@@ -19,7 +19,7 @@
           "type": "Check Variable Value",
           "trueActions": [
             {
-              "name": "help menu",
+              "name": "helpmenu",
               "category": "Message",
               "type": "Send Embed",
               "fields": [
@@ -31,7 +31,7 @@
                 {
                   "name": "!f | !flip",
                   "value": "The bot flips a coin 📀",
-                  "inline": "false"
+                  "inline": "true"
                 }
               ],
               "messageActionRows": [],
@@ -89,7 +89,7 @@
               "savevartype": "temp"
             },
             {
-              "name": "Ergebnis",
+              "name": "Ergebniss",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
@@ -100,7 +100,7 @@
               "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 **${tempVars.ergebniss}**\n\n",
+              "description": "🎲 **${tempVars.ergebniss}**",
               "thumbnail": "",
               "image": "",
               "footer": "${tempVars.würfelzahl}",
@@ -131,7 +131,7 @@
               "savevartype": "temp"
             },
             {
-              "name": "Ergebnis",
+              "name": "Ergebniss",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
@@ -142,7 +142,7 @@
               "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 **${tempVars.ergebniss}**\n\n",
+              "description": "🎲 **${tempVars.ergebniss}**",
               "thumbnail": "",
               "image": "",
               "footer": "${tempVars.würfelzahl}",
@@ -186,7 +186,7 @@
               "savevartype": "temp"
             },
             {
-              "name": "Ergebnis",
+              "name": "Ergebniss",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
@@ -197,7 +197,7 @@
               "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 **${tempVars.ergebniss}**\n\n",
+              "description": "🎲 **${tempVars.ergebniss}**",
               "thumbnail": "",
               "image": "",
               "footer": "${tempVars.würfelzahl}",
@@ -228,7 +228,7 @@
               "savevartype": "temp"
             },
             {
-              "name": "Ergebnis",
+              "name": "Ergebniss",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
@@ -239,7 +239,7 @@
               "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 **${tempVars.ergebniss}**\n\n",
+              "description": "🎲 **${tempVars.ergebniss}**",
               "thumbnail": "",
               "image": "",
               "footer": "${tempVars.würfelzahl}",

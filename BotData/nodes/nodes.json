@@ -18,76 +18,6 @@
     },
     {
       "type": "response",
-      "name": "help menu",
-      "guid": "b5f3eba8-55ab-47ff-b123-c17a7b1a0ca4",
-      "reactionFields": [],
-      "embedfields": [
-        {
-          "name": "!r *number*  | !roll *number*",
-          "value": "The result of the dice is between **1** and your **number**.  🎲        ...\nThe default value is **6**",
-          "inline": "false"
-        },
-        {
-          "name": "!f | !flip",
-          "value": "The bot flips a coin 📀",
-          "inline": "false"
-        }
-      ],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "fea18a7f-2215-4a95-afc5-486d9191bd18"
-        }
-      ],
-      "x": 773,
-      "y": 154,
-      "rtype": "Message",
-      "rsubtype": "Send Embed",
-      "formdata": [
-        "${dbsVars.CommandChannel.id}",
-        "00FFFF",
-        "Help",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "false",
-        "",
-        "temp"
-      ],
-      "formnames": [
-        "channelname",
-        "color",
-        "title",
-        "url",
-        "authorname",
-        "authorimageurl",
-        "authorlink",
-        "description",
-        "thumbnail",
-        "image",
-        "footer",
-        "timestamp",
-        "saveToVariable",
-        "saveToVariableType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
       "name": "get number",
       "guid": "ed398995-132d-4c29-bee3-e228c7e0cf28",
       "reactionFields": [],
@@ -178,7 +108,7 @@
         {
           "label": "next response",
           "connections": [
-            "7484ab2b-09c6-48c8-99a9-7def7d5cfcd0"
+            "3257a073-a14e-4598-9ed7-71639c4921a5"
           ]
         }
       ],
@@ -189,7 +119,7 @@
         }
       ],
       "x": 1444,
-      "y": 549,
+      "y": 550,
       "rtype": "Variable",
       "rsubtype": "Generate Random Number",
       "formdata": [
@@ -203,65 +133,6 @@
         "min",
         "max",
         "saveVarType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "Ergebnis",
-      "guid": "7484ab2b-09c6-48c8-99a9-7def7d5cfcd0",
-      "reactionFields": [],
-      "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "83a585a9-c04f-4915-b456-99937981f0da"
-        }
-      ],
-      "x": 1652,
-      "y": 566,
-      "rtype": "Message",
-      "rsubtype": "Send Embed",
-      "formdata": [
-        "${dbsVars.CommandChannel.id}",
-        "00FFFF",
-        "${dbsVars.CommandAuthor.displayName}",
-        "",
-        "",
-        "",
-        "",
-        "🎲 **${tempVars.ergebniss}**\n\n",
-        "",
-        "",
-        "${tempVars.würfelzahl}",
-        "false",
-        "",
-        "temp"
-      ],
-      "formnames": [
-        "channelname",
-        "color",
-        "title",
-        "url",
-        "authorname",
-        "authorimageurl",
-        "authorlink",
-        "description",
-        "thumbnail",
-        "image",
-        "footer",
-        "timestamp",
-        "saveToVariable",
-        "saveToVariableType"
       ],
       "messageActionRows": [],
       "valueFields": []
@@ -505,13 +376,13 @@
         {
           "label": "true",
           "connections": [
-            "1e13d631-9793-458d-863e-e95b7711dcf5"
+            "7fd7e16f-9e18-482f-8d04-935eb0272cef"
           ]
         },
         {
           "label": "false",
           "connections": [
-            "51031223-d222-4991-94c6-02b35a474dcd"
+            "d9780961-9a2c-4fd2-bb9b-a29b3a85c600"
           ]
         }
       ],
@@ -536,124 +407,6 @@
         "saveVarType",
         "compare",
         "value"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "Kopf",
-      "guid": "1e13d631-9793-458d-863e-e95b7711dcf5",
-      "reactionFields": [],
-      "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
-        }
-      ],
-      "x": 993,
-      "y": 830,
-      "rtype": "Message",
-      "rsubtype": "Send Embed",
-      "formdata": [
-        "${dbsVars.CommandChannel.id}",
-        "00FFFF",
-        "${dbsVars.CommandAuthor.displayName}",
-        "",
-        "",
-        "",
-        "",
-        "📀 **Head**",
-        "",
-        "",
-        "",
-        "false",
-        "",
-        "temp"
-      ],
-      "formnames": [
-        "channelname",
-        "color",
-        "title",
-        "url",
-        "authorname",
-        "authorimageurl",
-        "authorlink",
-        "description",
-        "thumbnail",
-        "image",
-        "footer",
-        "timestamp",
-        "saveToVariable",
-        "saveToVariableType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "Zahl",
-      "guid": "51031223-d222-4991-94c6-02b35a474dcd",
-      "reactionFields": [],
-      "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
-        }
-      ],
-      "x": 995,
-      "y": 951,
-      "rtype": "Message",
-      "rsubtype": "Send Embed",
-      "formdata": [
-        "${dbsVars.CommandChannel.id}",
-        "00FFFF",
-        "${dbsVars.CommandAuthor.displayName}",
-        "",
-        "",
-        "",
-        "",
-        "📀 **Tails**",
-        "",
-        "",
-        "",
-        "false",
-        "",
-        "temp"
-      ],
-      "formnames": [
-        "channelname",
-        "color",
-        "title",
-        "url",
-        "authorname",
-        "authorimageurl",
-        "authorlink",
-        "description",
-        "thumbnail",
-        "image",
-        "footer",
-        "timestamp",
-        "saveToVariable",
-        "saveToVariableType"
       ],
       "messageActionRows": [],
       "valueFields": []
@@ -709,7 +462,7 @@
         {
           "label": "true",
           "connections": [
-            "b5f3eba8-55ab-47ff-b123-c17a7b1a0ca4"
+            "260213d0-c7a1-4bfa-9e95-e662b638a726"
           ]
         },
         {
@@ -738,6 +491,253 @@
         "saveVarType",
         "compare",
         "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "helpmenu",
+      "guid": "260213d0-c7a1-4bfa-9e95-e662b638a726",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!r *number*  | !roll *number*",
+          "value": "The result of the dice is between **1** and your **number**.  🎲        ...\nThe default value is **6**",
+          "inline": "false"
+        },
+        {
+          "name": "!f | !flip",
+          "value": "The bot flips a coin 📀",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fea18a7f-2215-4a95-afc5-486d9191bd18"
+        }
+      ],
+      "x": 768,
+      "y": 178,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFFF",
+        "Help",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Ergebniss",
+      "guid": "3257a073-a14e-4598-9ed7-71639c4921a5",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "83a585a9-c04f-4915-b456-99937981f0da"
+        }
+      ],
+      "x": 1657,
+      "y": 569,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFFF",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "",
+        "",
+        "🎲 **${tempVars.ergebniss}**",
+        "",
+        "",
+        "${tempVars.würfelzahl}",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Kopf",
+      "guid": "7fd7e16f-9e18-482f-8d04-935eb0272cef",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
+        }
+      ],
+      "x": 1041,
+      "y": 817,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFFF",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "",
+        "",
+        "📀 **Head**",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Zahl",
+      "guid": "d9780961-9a2c-4fd2-bb9b-a29b3a85c600",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
+        }
+      ],
+      "x": 1042,
+      "y": 934,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFFF",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "",
+        "",
+        "📀 **Tails**",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
       ],
       "messageActionRows": [],
       "valueFields": []
