@@ -8,7 +8,7 @@
         {
           "label": "responses",
           "connections": [
-            "37eda463-a170-44f9-af54-61378ffc9294"
+            "842368af-90b8-4c0f-9a97-a628fd6a9fa1"
           ]
         }
       ],
@@ -19,18 +19,18 @@
     {
       "type": "response",
       "name": "help menu",
-      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "guid": "b5f3eba8-55ab-47ff-b123-c17a7b1a0ca4",
       "reactionFields": [],
       "embedfields": [
         {
-          "name": "!r <Zahl> / !roll <Zahl>",
-          "value": "Ich generiere eine zufällige Zahl zwischen 1 und deiner Zahl",
+          "name": "!r *Zahl*  | !roll *Zahl*",
+          "value": "Das Würfelergebniss liegt zwischen **1** und deiner **Zahl**.  🎲        ...\nDer Standart-Wert ist **6**",
           "inline": "false"
         },
         {
-          "name": "!coin / !c",
-          "value": "Ich werfe eine Münze (Kopf | Zahl)",
-          "inline": "true"
+          "name": "!f | !flip",
+          "value": "Der Bot wirft eine Münze 📀",
+          "inline": "false"
         }
       ],
       "saveToVariable": "",
@@ -44,22 +44,22 @@
       "inputs": [
         {
           "label": "trigger",
-          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+          "id": "fea18a7f-2215-4a95-afc5-486d9191bd18"
         }
       ],
-      "x": 349,
-      "y": 180,
+      "x": 773,
+      "y": 154,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "08EFFF",
+        "00FFFF",
         "Help",
         "",
         "",
         "",
         "",
-        "Hier erkläre ich nochmal wie du Würfeln kannst.",
+        "",
         "",
         "",
         "",
@@ -87,68 +87,36 @@
       "valueFields": []
     },
     {
-      "type": "command",
-      "name": "roll",
-      "guid": "5831ba96-c086-4bda-86a9-c28340efc968",
-      "outputs": [
-        {
-          "label": "responses",
-          "connections": [
-            "dfe55220-2005-450f-bb11-94ad48db5ffc"
-          ]
-        }
-      ],
-      "inputs": [],
-      "x": 167,
-      "y": 409
-    },
-    {
-      "type": "command",
-      "name": "r",
-      "guid": "e66c26ae-0f8f-4cae-865d-a9a3ce8ac48d",
-      "outputs": [
-        {
-          "label": "responses",
-          "connections": [
-            "ac8e9d7f-af47-4063-bfde-d9c2a3d0f050"
-          ]
-        }
-      ],
-      "inputs": [],
-      "x": 162,
-      "y": 693
-    },
-    {
       "type": "response",
-      "name": "w_get",
-      "guid": "dfe55220-2005-450f-bb11-94ad48db5ffc",
+      "name": "get number",
+      "guid": "ed398995-132d-4c29-bee3-e228c7e0cf28",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "maximal",
+      "saveToVariable": "würfelzahl",
       "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
           "connections": [
-            "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c"
+            "f183f8ff-4880-4347-9f02-000c7f157efa"
           ]
         }
       ],
       "inputs": [
         {
           "label": "trigger",
-          "id": "5831ba96-c086-4bda-86a9-c28340efc968"
+          "id": "1eae9c54-ad1e-42ff-b5db-3286c2263289"
         }
       ],
-      "x": 364,
-      "y": 442,
+      "x": 592,
+      "y": 520,
       "rtype": "Variable",
       "rsubtype": "Store Value in Variable",
       "formdata": [
-        "maximal",
+        "würfelzahl",
         "Number",
         "temp",
-        "1"
+        "1+"
       ],
       "formnames": [
         "varname",
@@ -161,198 +129,36 @@
     },
     {
       "type": "response",
-      "name": "w_trigger",
-      "guid": "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c",
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": [
-            "1527aef9-585e-4814-984c-69c91a3a415e"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "dfe55220-2005-450f-bb11-94ad48db5ffc"
-        },
-        {
-          "label": "trigger",
-          "id": "ac8e9d7f-af47-4063-bfde-d9c2a3d0f050"
-        }
-      ],
-      "x": 623,
-      "y": 485,
-      "rtype": "Control",
-      "rsubtype": "Multiple Input",
-      "messageActionRows": []
-    },
-    {
-      "type": "response",
-      "name": "w_set",
-      "guid": "bf0f2464-ef79-4ec9-b4c6-2966659876de",
-      "reactionFields": [],
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": [
-            "2f602979-91c6-40df-aeed-3c67c7d877f4"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "1527aef9-585e-4814-984c-69c91a3a415e"
-        }
-      ],
-      "x": 1141,
-      "y": 505,
-      "rtype": "Variable",
-      "rsubtype": "Generate Random Number",
-      "formdata": [
-        "ergebnis",
-        "1",
-        "${tempVars.maximal}",
-        "temp"
-      ],
-      "formnames": [
-        "varname",
-        "min",
-        "max",
-        "saveVarType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "w_send",
-      "guid": "2f602979-91c6-40df-aeed-3c67c7d877f4",
-      "reactionFields": [],
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "bf0f2464-ef79-4ec9-b4c6-2966659876de"
-        }
-      ],
-      "x": 1416,
-      "y": 548,
-      "rtype": "Message",
-      "rsubtype": "Send Embed",
-      "formdata": [
-        "${dbsVars.CommandChannel.id}",
-        "00FFF7",
-        "",
-        "",
-        "${dbsVars.CommandAuthor.displayName}",
-        "",
-        "",
-        "🎲 ${tempVars.ergebnis}",
-        "",
-        "",
-        "${tempVars.maximal}",
-        "false",
-        "",
-        "temp"
-      ],
-      "formnames": [
-        "channelname",
-        "color",
-        "title",
-        "url",
-        "authorname",
-        "authorimageurl",
-        "authorlink",
-        "description",
-        "thumbnail",
-        "image",
-        "footer",
-        "timestamp",
-        "saveToVariable",
-        "saveToVariableType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "w_get_1",
-      "guid": "ac8e9d7f-af47-4063-bfde-d9c2a3d0f050",
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": [
-            "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "e66c26ae-0f8f-4cae-865d-a9a3ce8ac48d"
-        }
-      ],
-      "x": 369,
-      "y": 665,
-      "rtype": "Variable",
-      "rsubtype": "Store Value in Variable",
-      "formdata": [
-        "maximal",
-        "Number",
-        "temp",
-        "1"
-      ],
-      "formnames": [
-        "varname",
-        "vartype",
-        "saveVarType",
-        "param"
-      ],
-      "messageActionRows": []
-    },
-    {
-      "type": "response",
-      "name": "w_check",
-      "guid": "1527aef9-585e-4814-984c-69c91a3a415e",
+      "name": "Check würfelzahl",
+      "guid": "f183f8ff-4880-4347-9f02-000c7f157efa",
       "reactionFields": [],
       "embedfields": [],
       "outputs": [
         {
           "label": "true",
           "connections": [
-            "bf0f2464-ef79-4ec9-b4c6-2966659876de"
+            "735fba7b-9bc7-4553-8bf0-8bf41934fe51"
           ]
         },
         {
           "label": "false",
           "connections": [
-            "2f3e6054-c2c4-4998-a7b5-760bcac85bde"
+            "6c86ba38-f277-41c6-9973-a56a287d5d55"
           ]
         }
       ],
       "inputs": [
         {
           "label": "trigger",
-          "id": "a521ebd6-7ba2-403b-a6bf-ecf1eb9be31c"
+          "id": "ed398995-132d-4c29-bee3-e228c7e0cf28"
         }
       ],
-      "x": 852,
-      "y": 495,
+      "x": 790,
+      "y": 518,
       "rtype": "Variable",
       "rsubtype": "Check If Variable Exists",
       "formdata": [
-        "maximal",
+        "würfelzahl",
         "temp"
       ],
       "formnames": [
@@ -364,32 +170,32 @@
     },
     {
       "type": "response",
-      "name": "w_set_6",
-      "guid": "2f3e6054-c2c4-4998-a7b5-760bcac85bde",
+      "name": "generate würfelzahl",
+      "guid": "83a585a9-c04f-4915-b456-99937981f0da",
       "reactionFields": [],
       "embedfields": [],
       "outputs": [
         {
           "label": "next response",
           "connections": [
-            "47abe0eb-1f54-4dcb-82d4-dae1d3f6be50"
+            "7484ab2b-09c6-48c8-99a9-7def7d5cfcd0"
           ]
         }
       ],
       "inputs": [
         {
           "label": "trigger",
-          "id": "1527aef9-585e-4814-984c-69c91a3a415e"
+          "id": "735fba7b-9bc7-4553-8bf0-8bf41934fe51"
         }
       ],
-      "x": 1216,
-      "y": 813,
+      "x": 1444,
+      "y": 549,
       "rtype": "Variable",
       "rsubtype": "Generate Random Number",
       "formdata": [
-        "ergebnis",
+        "ergebniss",
         "1",
-        "6",
+        "${tempVars.würfelzahl}",
         "temp"
       ],
       "formnames": [
@@ -403,10 +209,12 @@
     },
     {
       "type": "response",
-      "name": "w_send_6",
-      "guid": "47abe0eb-1f54-4dcb-82d4-dae1d3f6be50",
+      "name": "Ergebnis",
+      "guid": "7484ab2b-09c6-48c8-99a9-7def7d5cfcd0",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -416,25 +224,25 @@
       "inputs": [
         {
           "label": "trigger",
-          "id": "2f3e6054-c2c4-4998-a7b5-760bcac85bde"
+          "id": "83a585a9-c04f-4915-b456-99937981f0da"
         }
       ],
-      "x": 1485,
-      "y": 823,
+      "x": 1651,
+      "y": 567,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "00FFF7",
-        "",
-        "",
+        "00FFEE",
         "${dbsVars.CommandAuthor.displayName}",
         "",
         "",
-        "🎲 ${tempVars.ergebnis}",
         "",
         "",
-        "6",
+        "🎲 **${tempVars.ergebniss}**\n\n",
+        "",
+        "",
+        "${tempVars.würfelzahl}",
         "false",
         "",
         "temp"
@@ -460,30 +268,220 @@
     },
     {
       "type": "response",
-      "name": "W_set_coin",
-      "guid": "5ee04cb6-f6e0-473c-8bf9-ed64b3fb6844",
-      "reactionFields": [],
+      "name": "ergebnis",
+      "guid": "735fba7b-9bc7-4553-8bf0-8bf41934fe51",
       "embedfields": [],
       "outputs": [
         {
           "label": "next response",
           "connections": [
-            "24792323-8627-47f7-912c-fae57dc0de36"
+            "83a585a9-c04f-4915-b456-99937981f0da"
           ]
         }
       ],
       "inputs": [
         {
           "label": "trigger",
-          "id": "600941f1-481a-4d4a-b4dd-d76ff415299e"
+          "id": "f183f8ff-4880-4347-9f02-000c7f157efa"
+        },
+        {
+          "label": "trigger",
+          "id": "6c86ba38-f277-41c6-9973-a56a287d5d55"
         }
       ],
-      "x": 1511,
-      "y": 237,
+      "x": 1228,
+      "y": 523,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "set 6",
+      "guid": "6c86ba38-f277-41c6-9973-a56a287d5d55",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "735fba7b-9bc7-4553-8bf0-8bf41934fe51"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f183f8ff-4880-4347-9f02-000c7f157efa"
+        }
+      ],
+      "x": 1021,
+      "y": 662,
       "rtype": "Variable",
       "rsubtype": "Generate Random Number",
       "formdata": [
-        "coinwurf",
+        "würfelzahl",
+        "6",
+        "6",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "r",
+      "guid": "82d5b20b-bea7-4ff9-939a-3a339b076c0a",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "1eae9c54-ad1e-42ff-b5db-3286c2263289"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 78,
+      "y": 484
+    },
+    {
+      "type": "command",
+      "name": "roll",
+      "guid": "c0aefe3a-5ada-48d5-959b-a1ca7a6107e3",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "1eae9c54-ad1e-42ff-b5db-3286c2263289"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 72,
+      "y": 603
+    },
+    {
+      "type": "command",
+      "name": "f",
+      "guid": "15a01cbf-b7a8-45be-baff-1b2dbd4e0380",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "3d28faf0-2fc9-4a38-b035-22dbb9d24b53"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 88,
+      "y": 809
+    },
+    {
+      "type": "command",
+      "name": "flip",
+      "guid": "3b2771b2-d477-4739-8b81-71636aa64990",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "3d28faf0-2fc9-4a38-b035-22dbb9d24b53"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 87,
+      "y": 916
+    },
+    {
+      "type": "response",
+      "name": "flipinput",
+      "guid": "3d28faf0-2fc9-4a38-b035-22dbb9d24b53",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "852782a1-bbca-4d5c-812b-5470151a4089"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "15a01cbf-b7a8-45be-baff-1b2dbd4e0380"
+        },
+        {
+          "label": "trigger",
+          "id": "3b2771b2-d477-4739-8b81-71636aa64990"
+        }
+      ],
+      "x": 323,
+      "y": 812,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "rollinput",
+      "guid": "1eae9c54-ad1e-42ff-b5db-3286c2263289",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ed398995-132d-4c29-bee3-e228c7e0cf28"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "82d5b20b-bea7-4ff9-939a-3a339b076c0a"
+        },
+        {
+          "label": "trigger",
+          "id": "c0aefe3a-5ada-48d5-959b-a1ca7a6107e3"
+        }
+      ],
+      "x": 342,
+      "y": 452,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "set coin",
+      "guid": "852782a1-bbca-4d5c-812b-5470151a4089",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3d28faf0-2fc9-4a38-b035-22dbb9d24b53"
+        }
+      ],
+      "x": 543,
+      "y": 836,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "coin",
         "1",
         "2",
         "temp"
@@ -499,8 +497,53 @@
     },
     {
       "type": "response",
-      "name": "w_send_1",
-      "guid": "c8e27b21-665e-4de8-bd5e-434c684e1fb2",
+      "name": "check coin site",
+      "guid": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "1e13d631-9793-458d-863e-e95b7711dcf5"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "51031223-d222-4991-94c6-02b35a474dcd"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "852782a1-bbca-4d5c-812b-5470151a4089"
+        }
+      ],
+      "x": 767,
+      "y": 836,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "coin",
+        "temp",
+        "equal to",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Kopf",
+      "guid": "1e13d631-9793-458d-863e-e95b7711dcf5",
       "reactionFields": [],
       "embedfields": [],
       "outputs": [
@@ -512,19 +555,19 @@
       "inputs": [
         {
           "label": "trigger",
-          "id": "24792323-8627-47f7-912c-fae57dc0de36"
+          "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
         }
       ],
-      "x": 2046,
-      "y": 165,
+      "x": 994,
+      "y": 830,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "00FFF7",
-        "",
-        "",
+        "00FFEE",
         "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
         "",
         "",
         "📀 **Kopf**",
@@ -556,53 +599,8 @@
     },
     {
       "type": "response",
-      "name": "w_check_number1",
-      "guid": "24792323-8627-47f7-912c-fae57dc0de36",
-      "reactionFields": [],
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "true",
-          "connections": [
-            "c8e27b21-665e-4de8-bd5e-434c684e1fb2"
-          ]
-        },
-        {
-          "label": "false",
-          "connections": [
-            "7c9149c8-a68d-4813-94d0-79cab9b7aee7"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "5ee04cb6-f6e0-473c-8bf9-ed64b3fb6844"
-        }
-      ],
-      "x": 1756,
-      "y": 209,
-      "rtype": "Variable",
-      "rsubtype": "Check Variable Value",
-      "formdata": [
-        "coinwurf",
-        "temp",
-        "equal to",
-        "1"
-      ],
-      "formnames": [
-        "varname",
-        "saveVarType",
-        "compare",
-        "value"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "w_send_1_1",
-      "guid": "7c9149c8-a68d-4813-94d0-79cab9b7aee7",
+      "name": "Zahl",
+      "guid": "51031223-d222-4991-94c6-02b35a474dcd",
       "reactionFields": [],
       "embedfields": [],
       "outputs": [
@@ -614,19 +612,19 @@
       "inputs": [
         {
           "label": "trigger",
-          "id": "24792323-8627-47f7-912c-fae57dc0de36"
+          "id": "fa2eb9da-e9b7-443d-9b8a-796509ab9ecb"
         }
       ],
-      "x": 2055,
-      "y": 325,
+      "x": 994,
+      "y": 952,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
         "${dbsVars.CommandChannel.id}",
-        "00FFF7",
-        "",
-        "",
+        "00FFEE",
         "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
         "",
         "",
         "📀 **Zahl**",
@@ -657,65 +655,88 @@
       "valueFields": []
     },
     {
-      "type": "command",
-      "name": "coin",
-      "guid": "a61ada11-4c13-4324-b331-61ba0f501b94",
-      "outputs": [
-        {
-          "label": "responses",
-          "connections": [
-            "600941f1-481a-4d4a-b4dd-d76ff415299e"
-          ]
-        }
-      ],
-      "inputs": [],
-      "x": 643,
-      "y": 119
-    },
-    {
-      "type": "command",
-      "name": "c",
-      "guid": "33de53a9-c741-4d07-8a01-b2a623c57792",
-      "outputs": [
-        {
-          "label": "responses",
-          "connections": [
-            "600941f1-481a-4d4a-b4dd-d76ff415299e"
-          ]
-        }
-      ],
-      "inputs": [],
-      "x": 645,
-      "y": 255
-    },
-    {
       "type": "response",
-      "name": "coin_trigger",
-      "guid": "600941f1-481a-4d4a-b4dd-d76ff415299e",
+      "name": "get help",
+      "guid": "842368af-90b8-4c0f-9a97-a628fd6a9fa1",
+      "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "helpbotname",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
           "connections": [
-            "5ee04cb6-f6e0-473c-8bf9-ed64b3fb6844"
+            "fea18a7f-2215-4a95-afc5-486d9191bd18"
           ]
         }
       ],
       "inputs": [
         {
           "label": "trigger",
-          "id": "a61ada11-4c13-4324-b331-61ba0f501b94"
-        },
-        {
-          "label": "trigger",
-          "id": "33de53a9-c741-4d07-8a01-b2a623c57792"
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
         }
       ],
-      "x": 965,
-      "y": 124,
-      "rtype": "Control",
-      "rsubtype": "Multiple Input",
-      "messageActionRows": []
+      "x": 336,
+      "y": 176,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "helpbotname",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "check help",
+      "guid": "fea18a7f-2215-4a95-afc5-486d9191bd18",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "b5f3eba8-55ab-47ff-b123-c17a7b1a0ca4"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "842368af-90b8-4c0f-9a97-a628fd6a9fa1"
+        }
+      ],
+      "x": 544,
+      "y": 164,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "helpbotname",
+        "temp",
+        "equal to",
+        "Würfelbot"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
     }
   ]
 }

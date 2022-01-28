@@ -4,123 +4,59 @@
       "name": "help",
       "actions": [
         {
-          "name": "help menu",
-          "category": "Message",
-          "type": "Send Embed",
-          "fields": [
-            {
-              "name": "!r <Zahl> / !roll <Zahl>",
-              "value": "Ich generiere eine zufällige Zahl zwischen 1 und deiner Zahl",
-              "inline": "false"
-            },
-            {
-              "name": "!coin / !c",
-              "value": "Ich werfe eine Münze (Kopf | Zahl)",
-              "inline": "true"
-            }
-          ],
-          "messageActionRows": [],
-          "channelname": "${dbsVars.CommandChannel.id}",
-          "color": "08EFFF",
-          "title": "Help",
-          "url": "",
-          "authorname": "",
-          "authorimageurl": "",
-          "authorlink": "",
-          "description": "Hier erkläre ich nochmal wie du Würfeln kannst.",
-          "thumbnail": "",
-          "image": "",
-          "footer": "",
-          "timestamp": "false",
-          "savetovariable": "",
-          "savetovariabletype": "temp"
-        }
-      ]
-    },
-    {
-      "name": "roll",
-      "actions": [
-        {
-          "name": "w_get",
+          "name": "get help",
           "category": "Variable",
           "type": "Store Value in Variable",
           "messageActionRows": [],
-          "varname": "maximal",
-          "vartype": "Number",
+          "varname": "helpbotname",
+          "vartype": "Text",
           "savevartype": "temp",
-          "param": "1"
+          "param": "0"
         },
         {
-          "name": "w_check",
+          "name": "check help",
           "category": "Variable",
-          "type": "Check If Variable Exists",
+          "type": "Check Variable Value",
           "trueActions": [
             {
-              "name": "w_set",
-              "category": "Variable",
-              "type": "Generate Random Number",
-              "messageActionRows": [],
-              "varname": "ergebnis",
-              "min": "1",
-              "max": "${tempVars.maximal}",
-              "savevartype": "temp"
-            },
-            {
-              "name": "w_send",
+              "name": "help menu",
               "category": "Message",
               "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "!r *Zahl*  | !roll *Zahl*",
+                  "value": "Das Würfelergebniss liegt zwischen **1** und deiner **Zahl**.  🎲        ...\nDer Standart-Wert ist **6**",
+                  "inline": "false"
+                },
+                {
+                  "name": "!f | !flip",
+                  "value": "Der Bot wirft eine Münze 📀",
+                  "inline": "false"
+                }
+              ],
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFFF",
+              "title": "Help",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 ${tempVars.ergebnis}",
+              "description": "",
               "thumbnail": "",
               "image": "",
-              "footer": "${tempVars.maximal}",
+              "footer": "",
               "timestamp": "false",
               "savetovariable": "",
               "savetovariabletype": "temp"
             }
           ],
-          "falseActions": [
-            {
-              "name": "w_set_6",
-              "category": "Variable",
-              "type": "Generate Random Number",
-              "messageActionRows": [],
-              "varname": "ergebnis",
-              "min": "1",
-              "max": "6",
-              "savevartype": "temp"
-            },
-            {
-              "name": "w_send_6",
-              "category": "Message",
-              "type": "Send Embed",
-              "messageActionRows": [],
-              "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
-              "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
-              "authorimageurl": "",
-              "authorlink": "",
-              "description": "🎲 ${tempVars.ergebnis}",
-              "thumbnail": "",
-              "image": "",
-              "footer": "6",
-              "timestamp": "false",
-              "savetovariable": "",
-              "savetovariabletype": "temp"
-            }
-          ],
+          "falseActions": [],
           "messageActionRows": [],
-          "varname": "maximal",
-          "savevartype": "temp"
+          "varname": "helpbotname",
+          "savevartype": "temp",
+          "compare": "equal to",
+          "value": "Würfelbot"
         }
       ]
     },
@@ -128,46 +64,46 @@
       "name": "r",
       "actions": [
         {
-          "name": "w_get_1",
+          "name": "get number",
           "category": "Variable",
           "type": "Store Value in Variable",
           "messageActionRows": [],
-          "varname": "maximal",
+          "varname": "würfelzahl",
           "vartype": "Number",
           "savevartype": "temp",
-          "param": "1"
+          "param": "1+"
         },
         {
-          "name": "w_check",
+          "name": "Check würfelzahl",
           "category": "Variable",
           "type": "Check If Variable Exists",
           "trueActions": [
             {
-              "name": "w_set",
+              "name": "generate würfelzahl",
               "category": "Variable",
               "type": "Generate Random Number",
               "messageActionRows": [],
-              "varname": "ergebnis",
+              "varname": "ergebniss",
               "min": "1",
-              "max": "${tempVars.maximal}",
+              "max": "${tempVars.würfelzahl}",
               "savevartype": "temp"
             },
             {
-              "name": "w_send",
+              "name": "Ergebnis",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 ${tempVars.ergebnis}",
+              "description": "🎲 **${tempVars.ergebniss}**\n\n",
               "thumbnail": "",
               "image": "",
-              "footer": "${tempVars.maximal}",
+              "footer": "${tempVars.würfelzahl}",
               "timestamp": "false",
               "savetovariable": "",
               "savetovariabletype": "temp"
@@ -175,70 +111,177 @@
           ],
           "falseActions": [
             {
-              "name": "w_set_6",
+              "name": "set 6",
               "category": "Variable",
               "type": "Generate Random Number",
               "messageActionRows": [],
-              "varname": "ergebnis",
-              "min": "1",
+              "varname": "würfelzahl",
+              "min": "6",
               "max": "6",
               "savevartype": "temp"
             },
             {
-              "name": "w_send_6",
+              "name": "generate würfelzahl",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "messageActionRows": [],
+              "varname": "ergebniss",
+              "min": "1",
+              "max": "${tempVars.würfelzahl}",
+              "savevartype": "temp"
+            },
+            {
+              "name": "Ergebnis",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "🎲 ${tempVars.ergebnis}",
+              "description": "🎲 **${tempVars.ergebniss}**\n\n",
               "thumbnail": "",
               "image": "",
-              "footer": "6",
+              "footer": "${tempVars.würfelzahl}",
               "timestamp": "false",
               "savetovariable": "",
               "savetovariabletype": "temp"
             }
           ],
           "messageActionRows": [],
-          "varname": "maximal",
+          "varname": "würfelzahl",
           "savevartype": "temp"
         }
       ]
     },
     {
-      "name": "coin",
+      "name": "roll",
       "actions": [
         {
-          "name": "W_set_coin",
+          "name": "get number",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "messageActionRows": [],
+          "varname": "würfelzahl",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": "1+"
+        },
+        {
+          "name": "Check würfelzahl",
+          "category": "Variable",
+          "type": "Check If Variable Exists",
+          "trueActions": [
+            {
+              "name": "generate würfelzahl",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "messageActionRows": [],
+              "varname": "ergebniss",
+              "min": "1",
+              "max": "${tempVars.würfelzahl}",
+              "savevartype": "temp"
+            },
+            {
+              "name": "Ergebnis",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "🎲 **${tempVars.ergebniss}**\n\n",
+              "thumbnail": "",
+              "image": "",
+              "footer": "${tempVars.würfelzahl}",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "set 6",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "messageActionRows": [],
+              "varname": "würfelzahl",
+              "min": "6",
+              "max": "6",
+              "savevartype": "temp"
+            },
+            {
+              "name": "generate würfelzahl",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "messageActionRows": [],
+              "varname": "ergebniss",
+              "min": "1",
+              "max": "${tempVars.würfelzahl}",
+              "savevartype": "temp"
+            },
+            {
+              "name": "Ergebnis",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "🎲 **${tempVars.ergebniss}**\n\n",
+              "thumbnail": "",
+              "image": "",
+              "footer": "${tempVars.würfelzahl}",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "messageActionRows": [],
+          "varname": "würfelzahl",
+          "savevartype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "f",
+      "actions": [
+        {
+          "name": "set coin",
           "category": "Variable",
           "type": "Generate Random Number",
           "messageActionRows": [],
-          "varname": "coinwurf",
+          "varname": "coin",
           "min": "1",
           "max": "2",
           "savevartype": "temp"
         },
         {
-          "name": "w_check_number1",
+          "name": "check coin site",
           "category": "Variable",
           "type": "Check Variable Value",
           "trueActions": [
             {
-              "name": "w_send_1",
+              "name": "Kopf",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
               "description": "📀 **Kopf**",
@@ -252,15 +295,15 @@
           ],
           "falseActions": [
             {
-              "name": "w_send_1_1",
+              "name": "Zahl",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
               "description": "📀 **Zahl**",
@@ -273,7 +316,7 @@
             }
           ],
           "messageActionRows": [],
-          "varname": "coinwurf",
+          "varname": "coin",
           "savevartype": "temp",
           "compare": "equal to",
           "value": "1"
@@ -281,33 +324,33 @@
       ]
     },
     {
-      "name": "c",
+      "name": "flip",
       "actions": [
         {
-          "name": "W_set_coin",
+          "name": "set coin",
           "category": "Variable",
           "type": "Generate Random Number",
           "messageActionRows": [],
-          "varname": "coinwurf",
+          "varname": "coin",
           "min": "1",
           "max": "2",
           "savevartype": "temp"
         },
         {
-          "name": "w_check_number1",
+          "name": "check coin site",
           "category": "Variable",
           "type": "Check Variable Value",
           "trueActions": [
             {
-              "name": "w_send_1",
+              "name": "Kopf",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
               "description": "📀 **Kopf**",
@@ -321,15 +364,15 @@
           ],
           "falseActions": [
             {
-              "name": "w_send_1_1",
+              "name": "Zahl",
               "category": "Message",
               "type": "Send Embed",
               "messageActionRows": [],
               "channelname": "${dbsVars.CommandChannel.id}",
-              "color": "00FFF7",
-              "title": "",
+              "color": "00FFEE",
+              "title": "${dbsVars.CommandAuthor.displayName}",
               "url": "",
-              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
               "description": "📀 **Zahl**",
@@ -342,7 +385,7 @@
             }
           ],
           "messageActionRows": [],
-          "varname": "coinwurf",
+          "varname": "coin",
           "savevartype": "temp",
           "compare": "equal to",
           "value": "1"
