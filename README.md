@@ -11,3 +11,5 @@ Du musst nur noch deinen Bot-Token einfügen unter: <br />
 
 *wurde erstellt mit Discord-Bot-Studio* <br />
 https://store.steampowered.com/app/1118380/Discord_Bot_Studio/
+(test)[https://store.steampowered.com/app/1118380/Discord_Bot_Studio/]
+[test](https://store.steampowered.com/app/1118380/Discord_Bot_Studio/)
